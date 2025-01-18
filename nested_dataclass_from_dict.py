@@ -51,7 +51,7 @@ def create_dataclass_object_from_dict(dataclass_type: Type[T], dict_data: dict) 
 
 # Example dictionary
 config_dict = {
-    "bucket": "dwh",
+    "bucket": "my-bucket",
     "path": {
         "base": "my/full/path",
         "file": "some-file.parquet",

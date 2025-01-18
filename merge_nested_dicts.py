@@ -2,7 +2,7 @@
 if __name__ == "__main__":
 
     default_value = {
-        "bucket": "dwh", 
+        "bucket": "my-bucket", 
         "path": "my/full/path/default.csv",
         "nest": {
             "key_01": "value_01"
