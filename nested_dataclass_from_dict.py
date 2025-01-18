@@ -2,37 +2,6 @@ from dataclasses import dataclass, fields, is_dataclass, MISSING
 from typing import Any, Optional, Type, TypeVar, get_origin, get_args
 
 
-@dataclass 
-class OneMoreConfig:
-    secret: str
-    host: Optional[str] = "localhost"
-    hi: Optional[int] = None
-
-@dataclass 
-class YetAnotherConfig:
-    secret: Optional[str] = None
-
-# Nested dataclass for path
-@dataclass
-class PathConfig:
-    base: str
-    file: str
-    one_more_config: OneMoreConfig
-
-# Main dataclass that includes PathConfig
-@dataclass
-class Config:
-    bucket: str
-    path: PathConfig
-    yet_another_config: YetAnotherConfig
-    yet_another_config_list: list[YetAnotherConfig]
-
-
-@dataclass
-class SimpleDataClass:
-    name: str
-
-
 # Function to recursively convert dict to dataclass
 T = TypeVar('T')
 def create_dataclass_object_from_dict(cls: Type[T], data: dict) -> Any:
@@ -69,9 +38,40 @@ def create_dataclass_object_from_dict(cls: Type[T], data: dict) -> Any:
     return cls(**field_values)
 
 
-
-
 if __name__ == "__main__":
+    # create dataclasses
+    
+    @dataclass 
+    class OneMoreConfig:
+        secret: str
+        host: Optional[str] = "localhost"
+        hi: Optional[int] = None
+
+    @dataclass 
+    class YetAnotherConfig:
+        secret: Optional[str] = None
+
+    # Nested dataclass for path
+    @dataclass
+    class PathConfig:
+        base: str
+        file: str
+        one_more_config: OneMoreConfig
+
+    # Main dataclass that includes PathConfig
+    @dataclass
+    class Config:
+        bucket: str
+        path: PathConfig
+        yet_another_config: YetAnotherConfig
+        yet_another_config_list: list[YetAnotherConfig]
+
+
+    @dataclass
+    class SimpleDataClass:
+        name: str
+
+
     # Example dictionary
     config_dict = {
         "bucket": "my-bucket",
