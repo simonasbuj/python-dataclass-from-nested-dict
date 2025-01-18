@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: python:3.9  # Specify the Python version you need
+      image: python:3.9-slim  # Specify the Python version you need
 
     steps:
     - name: Checkout repository
