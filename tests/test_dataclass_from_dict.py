@@ -49,7 +49,7 @@ def test_create_dataclass_object_from_dict():
                 "secret": "goodbye"
             },
             {
-                "wrong_name": "goodbye"
+                "secret": "h"
             },
         ]
     }
@@ -70,7 +70,7 @@ def test_create_dataclass_object_from_dict():
         ), 
         yet_another_config_list=[
             YetAnotherConfig(secret='goodbye'), 
-            YetAnotherConfig(secret=None)
+            YetAnotherConfig(secret="h")
         ]
     )
     
