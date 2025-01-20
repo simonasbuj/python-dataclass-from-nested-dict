@@ -32,7 +32,8 @@ person_dict = {
             "zip_code": "67890"
         }
     ],
-    "friends": ["Jane", "Bob", "Alice"]
+    "friends": ["Jane", "Bob", "Alice"],
+    "new_key": "This key will be ignored"
 }
 
 # Create the Pydantic model object from the nested dictionary
